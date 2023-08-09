@@ -128,9 +128,11 @@ const Contact = () => {
   const [open, setOpen] = React.useState(false);
   const form = useRef();
 
+
+ // emailjs.send("service_oeawdi8","template_bxlzzaq");
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
+    emailjs.sendForm('service_oeawdi8', 'template_bxlzzaq', form.current, 'bHEQcbg08qobVz8D4')
       .then((result) => {
         setOpen(true);
         form.current.reset();
@@ -148,9 +150,9 @@ const Contact = () => {
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
+          <ContactInput placeholder="Your Email" name="email" />
+          <ContactInput placeholder="Your Name" name="name" />
+          {/* <ContactInput placeholder="Subject" name="subject" /> */}
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
